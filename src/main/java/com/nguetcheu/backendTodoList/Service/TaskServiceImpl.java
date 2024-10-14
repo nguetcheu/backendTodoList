@@ -33,7 +33,6 @@ public class TaskServiceImpl implements TaskService{
     @Override
     public Task updateTask(Long id, Task task) {
         Task taskToUpdate = taskRepository.findById(Math.toIntExact(id)).orElseThrow(() -> new RuntimeException("Task not found"));
-       taskToUpdate.setTitle(task.getTitle());
        taskToUpdate.setDescription(task.getDescription());
        taskToUpdate.setDone(task.isDone());
        taskToUpdate.setTargetDate(task.getTargetDate());
