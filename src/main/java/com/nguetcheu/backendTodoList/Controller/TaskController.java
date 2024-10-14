@@ -33,14 +33,14 @@ public class TaskController {
 
     @PostMapping("/save")
     public ResponseEntity<Task> saveTask(@RequestBody Task task) {
-        taskService.createTask(task);
-        return new ResponseEntity<>(task, HttpStatus.CREATED);
+        Task newTask = taskService.createTask(task);
+        return new ResponseEntity<>(newTask, HttpStatus.CREATED);
     }
 
     @PutMapping("/update/{taskId}")
     public ResponseEntity<Task> updateTask(@PathVariable("taskId") Long taskId, @RequestBody Task task){
-        taskService.updateTask(taskId, task);
-        return new ResponseEntity<>(task, HttpStatus.OK);
+        Task updateTask =  taskService.updateTask(taskId, task);
+        return new ResponseEntity<>(updateTask, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{taskId}")

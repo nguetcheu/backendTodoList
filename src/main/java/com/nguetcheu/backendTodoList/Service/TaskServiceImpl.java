@@ -35,7 +35,8 @@ public class TaskServiceImpl implements TaskService{
         Task taskToUpdate = taskRepository.findById(Math.toIntExact(id)).orElseThrow(() -> new RuntimeException("Task not found"));
        taskToUpdate.setTitle(task.getTitle());
        taskToUpdate.setDescription(task.getDescription());
-       taskToUpdate.setCompleted(task.isCompleted());
+       taskToUpdate.setDone(task.isDone());
+       taskToUpdate.setTargetDate(task.getTargetDate());
         return taskToUpdate;
     }
 

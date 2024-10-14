@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Data;
 
+import java.util.Date;
+
 @Entity
 @Data
 public class Task {
@@ -15,5 +17,6 @@ public class Task {
 
     private String title;
     private String description;
-    private boolean completed;
+    private boolean done;
+    private Date targetDate;
 }
