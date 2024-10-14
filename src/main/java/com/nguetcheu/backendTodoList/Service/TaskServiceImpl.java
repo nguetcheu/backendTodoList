@@ -36,7 +36,7 @@ public class TaskServiceImpl implements TaskService{
        taskToUpdate.setDescription(task.getDescription());
        taskToUpdate.setDone(task.isDone());
        taskToUpdate.setTargetDate(task.getTargetDate());
-        return taskToUpdate;
+        return taskRepository.save(taskToUpdate);
     }
 
     @Override
